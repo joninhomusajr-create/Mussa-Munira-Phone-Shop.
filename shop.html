@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone Shop</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Phone Shop</h1>
+        <button id="logout">Logout</button>
+    </header>
+    <div class="products">
+        <div class="product">
+            <img src="https://via.placeholder.com/200x200?text=Samsung+Galaxy" alt="Samsung Galaxy">
+            <h3>Samsung Galaxy S23</h3>
+            <p>$799</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200x200?text=Pixel+7" alt="Google Pixel">
+            <h3>Google Pixel 7</h3>
+            <p>$599</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200x200?text=iPhone+14" alt="iPhone">
+            <h3>iPhone 14</h3>
+            <p>$999</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+        <div class="product">
+            <img src="https://via.placeholder.com/200x200?text=Infinix+Note" alt="Infinix">
+            <h3>Infinix Note 30</h3>
+            <p>$299</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+    <div class="cart">
+        <h2>Cart</h2>
+        <ul id="cartItems"></ul>
+        <p>Total: $<span id="total">0</span></p>
+        <button id="checkout">Checkout (Pickup Only)</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

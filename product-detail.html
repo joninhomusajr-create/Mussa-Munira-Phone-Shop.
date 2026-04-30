@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidhaa ya Simu - Mussa & Munira Phone Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <h1>Mussa & Munira<br><span class="logo-sub">Phone Shop</span></h1>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Nyumbani</a>
+                    <a href="products.html" class="nav-link active">Simu</a>
+                    <a href="about.html" class="nav-link">Kuhusu Sisi</a>
+                    <a href="contact.html" class="nav-link">Wasiliana</a>
+                </div>
+                
+                <div class="nav-right">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Tafuta simu..." id="searchInput">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <a href="checkout.html" class="cart-icon">🛒 <span class="cart-count">0</span></a>
+                </div>
+                
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="product-detail">
+            <!-- Image Gallery -->
+            <div class="product-gallery">
+                <div class="main-image">
+                    <img id="mainImage" src="assets/images/phones/iphone-15-pro-1.jpg" alt="Simu">
+                </div>
+                <div class="thumbnail-images">
+                    <img src="assets/images/phones/iphone-15-pro-1.jpg" onclick="changeImage(this)" alt="View 1">
+                    <img src="assets/images/phones/iphone-15-pro-2.jpg" onclick="changeImage(this)" alt="View 2">
+                    <img src="assets/images/phones/iphone-15-pro-3.jpg" onclick="changeImage(this)" alt="View 3">
+                </div>
+                <div class="video-section">
+                    <h4>Video ya 360 Degree / Unboxing</h4>
+                    <video width="100%" height="300" controls>
+                        <source src="assets/videos/360-view.mp4" type="video/mp4">
+                        Kila simu ina video ya 360 degree
+                    </video>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info">
+                <h1 id="productTitle">iPhone 15 Pro 256GB</h1>
+                
+                <div class="pricing">
+                    <span class="old-price" id="oldPrice">Sh. 3,500,000</span>
+                    <span class="new-price" id="newPrice">Sh. 2,999,000</span>
+                    <span class="discount" id="discount">Save 501K</span>
+                </div>
+
+                <div class="stock-info">
+                    <p>Zimebaki: <strong id="stockCount">8</strong> tu</p>
+                </div>
+
+                <div class="rating">
+                    <div class="stars">⭐⭐⭐⭐⭐</div>
+                    <p>4.8/5 (234 reviews)</p>
+                </div>
+
+                <!-- Add to Cart -->
+                <div class="quantity-selector">
+                    <button onclick="decreaseQty()">-</button>
+                    <input type="number" id="quantity" value="1" min="1">
+                    <button onclick="increaseQty()">+</button>
+                </div>
+
+                <button class="btn btn-primary btn-large" onclick="addToCart()">Ogelea Kwenye Karata</button>
+                <button class="btn btn-secondary btn-large">Linganisha</button>
+
+                <!-- Specifications -->
+                <div class="specs">
+                    <h3>Maelezo Kamili</h3>
+                    <table>
+                        <tr>
+                            <td>Processor</td>
+                            <td id="processor">Apple A17 Pro</td>
+                        </tr>
+                        <tr>
+                            <td>RAM</td>
+                            <td id="ram">8GB</td>
+                        </tr>
+                        <tr>
+                            <td>Storage</td>
+                            <td id="storage">256GB</td>
+                        </tr>
+                        <tr>
+                            <td>Camera</td>
+                            <td id="camera">48MP Dual Camera</td>
+                        </tr>
+                        <tr>
+                            <td>Battery</td>
+                            <td id="battery">3200 mAh</td>
+                        </tr>
+                        <tr>
+                            <td>Display</td>
+                            <td id="display">6.1" Super Retina XDR</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <!-- Payment Info -->
+                <div class="payment-info">
+                    <h3>Malipo</h3>
+                    <p>💵 Tigo Pesa: 0772165345</p>
+                    <p>💵 Tigo Pesa: 0651723082</p>
+                    <p>🏦 DPO Payment / Selcom</p>
+                </div>
+
+                <!-- Delivery Info -->
+                <div class="delivery-info">
+                    <h3>Delivery & Warranty</h3>
+                    <p>🚚 Delivery Dar Es Salaam: 5,000</p>
+                    <p>🚚 Mikoa Nyingine: 10,000</p>
+                    <p>✅ Warranty: Miezi 12</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Customer Reviews -->
+        <section class="reviews-section">
+            <h2>Riwaya za Wateja</h2>
+            <div class="reviews">
+                <div class="review">
+                    <div class="review-header">
+                        <h4>John Doe</h4>
+                        <span class="review-rating">⭐⭐⭐⭐⭐</span>
+                    </div>
+                    <p>Simu nzuri sana! Delivery ilikuwa haraka na packaged vizuri. Recommended!</p>
+                </div>
+                <div class="review">
+                    <div class="review-header">
+                        <h4>Jane Smith</h4>
+                        <span class="review-rating">⭐⭐⭐⭐</span>
+                    </div>
+                    <p>Simu nzuri lakini bei ilikuwa kidogo juu lakini overall satisfied.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Return Policy -->
+        <section class="return-policy">
+            <h2>Sera ya Kurudi</h2>
+            <p><strong>Hakuna Njia ya Kurudi Pesa</strong> - Ikiwa hukupenda simu hii, haiwezi kurudisha pesa zako.</p>
+            <p><strong>Siku 7 ya Kurudi</strong> - Ikiwa hakuna tatizo na simu, unaweza kurudisha zako ndani ya siku 7 bila malipo ya kurudi.</p>
+            <p><strong>Warranty Miezi 12</strong> - Simu yote inakamatia warranty ya miezi 12 kwa factory defects.</p>
+        </section>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/255772165345?text=Habari,%20Ninataka%20kununua%20simu" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+        <span class="whatsapp-icon">💬</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Mussa & Munira Phone Shop</h4>
+                    <p>Kununua simu za mtindo na bei nzuri</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Malipo</h4>
+                    <p>💵 Tigo Pesa: 0772165345</p>
+                    <p>💵 Tigo Pesa: 0651723082</p>
+                    <p>🏦 DPO Payment / Selcom</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Wasiliana Nasi</h4>
+                    <p>📞 0772165345</p>
+                    <p>💬 WhatsApp: 0772165345</p>
+                    <p>📧 info@mussaphoneshop.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Mtandao wa Kijamii</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com/MussaWebDeveloper" target="_blank">📘 Facebook</a>
+                        <a href="https://instagram.com/MussaWebDeveloper" target="_blank">📷 Instagram</a>
+                        <a href="https://tiktok.com/@MussaWebDeveloper" target="_blank">🎵 TikTok</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mussa & Munira Phone Shop. Haki Zimezeziwa © | <a href="#">Sera ya Kurudi</a> | <a href="#">SSL Certificate ✅</a></p>
+                <p>Developed by Mussa Web Developer</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

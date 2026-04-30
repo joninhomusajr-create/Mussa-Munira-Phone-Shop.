@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wasiliana - Mussa & Munira Phone Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <h1>Mussa & Munira<br><span class="logo-sub">Phone Shop</span></h1>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Nyumbani</a>
+                    <a href="products.html" class="nav-link">Simu</a>
+                    <a href="about.html" class="nav-link">Kuhusu Sisi</a>
+                    <a href="contact.html" class="nav-link active">Wasiliana</a>
+                </div>
+                
+                <div class="nav-right">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Tafuta simu..." id="searchInput">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <a href="checkout.html" class="cart-icon">🛒 <span class="cart-count">0</span></a>
+                </div>
+                
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="contact-section">
+            <h1>Wasiliana Nasi</h1>
+
+            <div class="contact-content">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <h2>Njia za Kuwasiliana</h2>
+
+                    <div class="contact-item">
+                        <h3>📞 Simu</h3>
+                        <p><a href="tel:+255772165345">0772165345</a></p>
+                        <small>Saa 8am - 8pm, Kila siku</small>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>💬 WhatsApp</h3>
+                        <p><a href="https://wa.me/255772165345" target="_blank">0772165345</a></p>
+                        <small>Saa 24/7, Hapo hapo</small>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>📧 Email</h3>
+                        <p><a href="mailto:info@mussaphoneshop.com">info@mussaphoneshop.com</a></p>
+                        <small>Tutakajibu ndani ya masaa 2</small>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>📍 Mahali</h3>
+                        <p>Dar es Salaam, Tanzania</p>
+                        <p>Karibu na Kigamboni</p>
+                    </div>
+
+                    <div class="contact-item">
+                        <h3>🕐 Saa</h3>
+                        <p>Jumatatu - Ijumaa: 9am - 6pm</p>
+                        <p>Jumamosi: 10am - 4pm</p>
+                        <p>Jumapili: Imefungwa</p>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2>Tuma Ujumbe</h2>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Jina:</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Simu:</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject">Somo:</label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Chagua Somo</option>
+                                <option value="product">Kuhusu Bidhaa</option>
+                                <option value="order">Kuhusu Agizo</option>
+                                <option value="delivery">Kuhusu Delivery</option>
+                                <option value="warranty">Kuhusu Warranty</option>
+                                <option value="other">Kwa Jumla</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Ujumbe:</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Tuma Ujumbe</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Map Section -->
+            <section class="location-section">
+                <h2>Mahali Petu</h2>
+                <iframe width="100%" height="400" style="border:0; border-radius: 8px; margin-top: 20px;" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3962.0149865699024!2d39.20548271476695!3d-6.7924541969999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x185c4d4b1c1c1c1d%3A0x1c1c1c1c1c1c1c1c!2sDar%20es%20Salaam%2C%20Tanzania!5e0!3m2!1ssw!2stz!4v1234567890" 
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </section>
+
+            <!-- FAQ Section -->
+            <section class="faq-section">
+                <h2>Swali Zenye Jibu Mara kwa Mara</h2>
+                <div class="faq">
+                    <div class="faq-item">
+                        <h3>❓ Delivery inkakaa kwa muda gani?</h3>
+                        <p>Delivery ya Dar es Salaam: Siku moja. Mikoani: Siku 2-3. Delivery ina jadwali.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>❓ Warranty ni miezi mingapi?</h3>
+                        <p>Simu yote inakamatia warranty ya miezi 12 kwa factory defects.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>❓ Kama simu inapatia tatizo?</h3>
+                        <p>Karibu haraka ou malipo ya kurudi. Swali la warranty na sera ya kurudi.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>❓ Njia ya malipo ni nini?</h3>
+                        <p>Lipa na Tigo Pesa, DPO, au Selcom. Tunajua pia WhatsApp payment.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>❓ Linganisha simu?</h3>
+                        <p>Ingia kwenye simu na ubofye "Linganisha" kutoka simu ya kwanza na ya pili.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>❓ Mtu wa customer support?</h3>
+                        <p>WhatsApp: 24/7. Simu: 8am-8pm. Tumejaliwa kufika kwa muda.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/255772165345?text=Habari%20Mussa%20%26%20Munira,%20nina%20swali" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+        <span class="whatsapp-icon">💬</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Mussa & Munira Phone Shop</h4>
+                    <p>Kununua simu za mtindo na bei nzuri</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Malipo</h4>
+                    <p>💵 Tigo Pesa: 0772165345</p>
+                    <p>💵 Tigo Pesa: 0651723082</p>
+                    <p>🏦 DPO Payment / Selcom</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Wasiliana Nasi</h4>
+                    <p>📞 0772165345</p>
+                    <p>💬 WhatsApp: 0772165345</p>
+                    <p>📧 info@mussaphoneshop.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Mtandao wa Kijamii</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com/MussaWebDeveloper" target="_blank">📘 Facebook</a>
+                        <a href="https://instagram.com/MussaWebDeveloper" target="_blank">📷 Instagram</a>
+                        <a href="https://tiktok.com/@MussaWebDeveloper" target="_blank">🎵 TikTok</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mussa & Munira Phone Shop. Haki Zimezeziwa © | <a href="#">Sera ya Kurudi</a> | <a href="#">SSL Certificate ✅</a></p>
+                <p>Developed by Mussa Web Developer</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

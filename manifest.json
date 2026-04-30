@@ -1,0 +1,63 @@
+{
+    "name": "Mussa & Munira Phone Shop",
+    "short_name": "Mussa Phone",
+    "description": "Kununua simu za mitindo na bei nzuri - iPhone, Samsung, Xiaomi, Tecno, Infinix, Oppo",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#FFFFFF",
+    "theme_color": "#14B8A6",
+    "orientation": "portrait-primary",
+    "icons": [
+        {
+            "src": "assets/images/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/images/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any"
+        },
+        {
+            "src": "assets/images/icon-maskable-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "assets/images/icon-maskable-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "assets/images/screenshot1.png",
+            "sizes": "540x720",
+            "type": "image/png"
+        },
+        {
+            "src": "assets/images/screenshot2.png",
+            "sizes": "540x720",
+            "type": "image/png"
+        }
+    ],
+    "categories": ["shopping", "productivity"],
+    "shortcuts": [
+        {
+            "name": "Simu za Mitindo",
+            "short_name": "Simu",
+            "description": "Tafuta simu za vile vile unazohitaji",
+            "url": "/products.html",
+            "icons": [
+                {
+                    "src": "assets/images/icon-96.png",
+                    "sizes": "96x96"
+                }
+            ]
+        }
+    ]
+}

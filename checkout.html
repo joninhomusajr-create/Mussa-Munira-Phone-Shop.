@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lipa - Mussa & Munira Phone Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <h1>Mussa & Munira<br><span class="logo-sub">Phone Shop</span></h1>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Nyumbani</a>
+                    <a href="products.html" class="nav-link">Simu</a>
+                    <a href="about.html" class="nav-link">Kuhusu Sisi</a>
+                    <a href="contact.html" class="nav-link">Wasiliana</a>
+                </div>
+                
+                <div class="nav-right">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Tafuta simu..." id="searchInput">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <a href="checkout.html" class="cart-icon active">🛒 <span class="cart-count">0</span></a>
+                </div>
+                
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Checkout Steps -->
+        <div class="checkout-steps">
+            <div class="step active" id="step-1">
+                <div class="step-number">1</div>
+                <div class="step-label">Karata</div>
+            </div>
+            <div class="step" id="step-2">
+                <div class="step-number">2</div>
+                <div class="step-label">Anwani</div>
+            </div>
+            <div class="step" id="step-3">
+                <div class="step-number">3</div>
+                <div class="step-label">Lipa</div>
+            </div>
+            <div class="step" id="step-4">
+                <div class="step-number">✓</div>
+                <div class="step-label">Kumaliziwa</div>
+            </div>
+        </div>
+
+        <div class="checkout-content">
+            <!-- Step 1: Cart -->
+            <div class="checkout-step active" id="checkout-step-1">
+                <h2>Karata Yako</h2>
+                <div class="cart-items">
+                    <!-- Cart items will be loaded by JavaScript -->
+                    <div class="empty-cart">
+                        <p>Karata yako ni tupu. <a href="products.html">Rudi kubandika simu</a></p>
+                    </div>
+                </div>
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Sub Total:</span>
+                        <span id="subtotal">Sh. 0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Delivery:</span>
+                        <span id="delivery">Sh. 0</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Total:</span>
+                        <span id="total">Sh. 0</span>
+                    </div>
+                </div>
+                <button class="btn btn-primary btn-large" onclick="nextStep(2)">Endelea kwa Anwani</button>
+            </div>
+
+            <!-- Step 2: Shipping Address -->
+            <div class="checkout-step" id="checkout-step-2">
+                <h2>Anwani ya Delivery</h2>
+                
+                <form id="addressForm">
+                    <div class="form-group">
+                        <label for="fullname">Jina Kamili:</label>
+                        <input type="text" id="fullname" name="fullname" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Simu:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">Jiji:</label>
+                        <select id="city" name="city" onchange="updateDeliveryCost()" required>
+                            <option value="">Chagua Jiji</option>
+                            <option value="dar">Dar es Salaam (5,000)</option>
+                            <option value="arusha">Arusha (10,000)</option>
+                            <option value="mbeya">Mbeya (10,000)</option>
+                            <option value="zanzibar">Zanzibar (8,000)</option>
+                            <option value="moshi">Moshi (10,000)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address">Anwani Kamili:</label>
+                        <textarea id="address" name="address" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="guestCheckout" name="guestCheckout" checked>
+                            Guest Checkout (Simu tu)
+                        </label>
+                    </div>
+                </form>
+
+                <button class="btn btn-secondary" onclick="previousStep(1)">Rudi Nyuma</button>
+                <button class="btn btn-primary" onclick="nextStep(3)">Endelea kwa Malipo</button>
+            </div>
+
+            <!-- Step 3: Payment -->
+            <div class="checkout-step" id="checkout-step-3">
+                <h2>Njia ya Malipo</h2>
+                
+                <div class="payment-methods">
+                    <h3>Chagua Njia ya Malipo</h3>
+                    
+                    <div class="payment-method">
+                        <input type="radio" id="tigo1" name="payment" value="tigo1" checked>
+                        <label for="tigo1">
+                            <span class="method-name">💵 Tigo Pesa</span>
+                            <span class="method-number">0772165345</span>
+                            <p class="method-info">Lipa kwa Tigo Pesa kwa namba hii, kisha tuma code kwa tele</p>
+                        </label>
+                    </div>
+
+                    <div class="payment-method">
+                        <input type="radio" id="tigo2" name="payment" value="tigo2">
+                        <label for="tigo2">
+                            <span class="method-name">💵 Tigo Pesa</span>
+                            <span class="method-number">0651723082</span>
+                            <p class="method-info">Tigo Pesa namba ya pili</p>
+                        </label>
+                    </div>
+
+                    <div class="payment-method">
+                        <input type="radio" id="dpo" name="payment" value="dpo">
+                        <label for="dpo">
+                            <span class="method-name">🏦 DPO Payment / Selcom</span>
+                            <p class="method-info">Lipa kwa DPO au Selcom (Secure Payment)</p>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="payment-summary">
+                    <h3>Muhtasari wa Malipo</h3>
+                    <div class="summary-row">
+                        <span>Sub Total:</span>
+                        <span id="payment-subtotal">Sh. 0</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Delivery:</span>
+                        <span id="payment-delivery">Sh. 0</span>
+                    </div>
+                    <div class="summary-row total">
+                        <span>Jumla:</span>
+                        <span id="payment-total">Sh. 0</span>
+                    </div>
+                </div>
+
+                <div class="payment-info-box">
+                    <h4>⚠️ Kumbuka:</h4>
+                    <p>1. Tuma pesa kwa namba iliyochaguliwa</p>
+                    <p>2. Nusuru confirmation code</p>
+                    <p>3. Tuma code kwa WhatsApp: 0772165345</p>
+                </div>
+
+                <button class="btn btn-secondary" onclick="previousStep(2)">Rudi Nyuma</button>
+                <button class="btn btn-primary" onclick="completeCheckout()">Kamata Agizo</button>
+            </div>
+
+            <!-- Step 4: Completion -->
+            <div class="checkout-step" id="checkout-step-4">
+                <div class="success-message">
+                    <h2>✓ Agizo Limepokelewa!</h2>
+                    <p>Shukrani sana kwa kununua kutoka Mussa & Munira Phone Shop</p>
+                    
+                    <div class="order-details">
+                        <h3>Maelezo ya Agizo</h3>
+                        <p><strong>Namba ya Agizo:</strong> #MP-2026-00123</p>
+                        <p><strong>Tarehe:</strong> 30 Aprili 2026</p>
+                        <p><strong>Jumla:</strong> <span id="final-total">Sh. 0</span></p>
+                        <p><strong>Mahali pa Delivery:</strong> <span id="delivery-location">Dar es Salaam</span></p>
+                    </div>
+
+                    <div class="next-steps">
+                        <h3>Hatua Inayofuata</h3>
+                        <ol>
+                            <li>Utakamatia SMS na confirmation</li>
+                            <li>Simu itakuja ndani ya siku mbili (Dar) au kwa ajili ya mikoani</li>
+                            <li>Driver atakupigia simu kabla ya kufika</li>
+                            <li>Angalia simu kabla ya kuingia before giving payment to driver</li>
+                        </ol>
+                    </div>
+
+                    <button class="btn btn-primary" onclick="window.location.href='index.html'">Rudi Nyumbani</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/255772165345?text=Nimetengeneza%20agizo,%20tafadhali%20hakikisha" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+        <span class="whatsapp-icon">💬</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Mussa & Munira Phone Shop</h4>
+                    <p>Kununua simu za mtindo na bei nzuri</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Malipo</h4>
+                    <p>💵 Tigo Pesa: 0772165345</p>
+                    <p>💵 Tigo Pesa: 0651723082</p>
+                    <p>🏦 DPO Payment / Selcom</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Wasiliana Nasi</h4>
+                    <p>📞 0772165345</p>
+                    <p>💬 WhatsApp: 0772165345</p>
+                    <p>📧 info@mussaphoneshop.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Mtandao wa Kijamii</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com/MussaWebDeveloper" target="_blank">📘 Facebook</a>
+                        <a href="https://instagram.com/MussaWebDeveloper" target="_blank">📷 Instagram</a>
+                        <a href="https://tiktok.com/@MussaWebDeveloper" target="_blank">🎵 TikTok</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mussa & Munira Phone Shop. Haki Zimezeziwa © | <a href="#">Sera ya Kurudi</a> | <a href="#">SSL Certificate ✅</a></p>
+                <p>Developed by Mussa Web Developer</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

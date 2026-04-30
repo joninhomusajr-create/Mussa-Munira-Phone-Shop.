@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simu - Mussa & Munira Phone Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-content">
+                <div class="logo">
+                    <h1>Mussa & Munira<br><span class="logo-sub">Phone Shop</span></h1>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="index.html" class="nav-link">Nyumbani</a>
+                    <a href="products.html" class="nav-link active">Simu</a>
+                    <a href="about.html" class="nav-link">Kuhusu Sisi</a>
+                    <a href="contact.html" class="nav-link">Wasiliana</a>
+                </div>
+                
+                <div class="nav-right">
+                    <div class="search-bar">
+                        <input type="text" placeholder="Tafuta simu..." id="searchInput" onkeyup="filterProducts()">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <a href="checkout.html" class="cart-icon">🛒 <span class="cart-count">0</span></a>
+                </div>
+                
+                <button class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="products-page">
+            <!-- Sidebar Filters -->
+            <aside class="sidebar">
+                <h3>Kichujio</h3>
+                
+                <!-- Price Filter -->
+                <div class="filter-group">
+                    <h4>Bei</h4>
+                    <div class="filter-options">
+                        <label><input type="checkbox" name="price" value="0-200000"> 0 - 200,000</label>
+                        <label><input type="checkbox" name="price" value="200000-500000"> 200,000 - 500,000</label>
+                        <label><input type="checkbox" name="price" value="500000-1000000"> 500,000 - 1,000,000</label>
+                        <label><input type="checkbox" name="price" value="1000000+"> 1,000,000+</label>
+                    </div>
+                </div>
+
+                <!-- Brand Filter -->
+                <div class="filter-group">
+                    <h4>Brand</h4>
+                    <div class="filter-options">
+                        <label><input type="checkbox" name="brand" value="Apple"> Apple</label>
+                        <label><input type="checkbox" name="brand" value="Samsung"> Samsung</label>
+                        <label><input type="checkbox" name="brand" value="Xiaomi"> Xiaomi</label>
+                        <label><input type="checkbox" name="brand" value="Tecno"> Tecno</label>
+                        <label><input type="checkbox" name="brand" value="Infinix"> Infinix</label>
+                        <label><input type="checkbox" name="brand" value="Oppo"> Oppo</label>
+                    </div>
+                </div>
+
+                <!-- RAM Filter -->
+                <div class="filter-group">
+                    <h4>RAM</h4>
+                    <div class="filter-options">
+                        <label><input type="checkbox" name="ram" value="4GB"> 4GB</label>
+                        <label><input type="checkbox" name="ram" value="6GB"> 6GB</label>
+                        <label><input type="checkbox" name="ram" value="8GB"> 8GB</label>
+                        <label><input type="checkbox" name="ram" value="12GB"> 12GB</label>
+                        <label><input type="checkbox" name="ram" value="16GB"> 16GB</label>
+                    </div>
+                </div>
+
+                <!-- Storage Filter -->
+                <div class="filter-group">
+                    <h4>Storage</h4>
+                    <div class="filter-options">
+                        <label><input type="checkbox" name="storage" value="128GB"> 128GB</label>
+                        <label><input type="checkbox" name="storage" value="256GB"> 256GB</label>
+                        <label><input type="checkbox" name="storage" value="512GB"> 512GB</label>
+                        <label><input type="checkbox" name="storage" value="1TB"> 1TB</label>
+                    </div>
+                </div>
+
+                <button class="btn btn-secondary" onclick="resetFilters()">Rudisha Chaguo</button>
+            </aside>
+
+            <!-- Main Products Area -->
+            <main class="products-main">
+                <!-- Sort Options -->
+                <div class="sort-container">
+                    <label for="sortBy">Panga:</label>
+                    <select id="sortBy" onchange="sortProducts()">
+                        <option value="popular">Zinazonunuliwa Sana</option>
+                        <option value="newest">Mpya Za Kwanza</option>
+                        <option value="price-low">Bei Ya Chini-Juu</option>
+                        <option value="price-high">Bei Ya Juu-Chini</option>
+                    </select>
+                </div>
+
+                <!-- Products Grid -->
+                <div class="products-grid" id="productsGrid">
+                    <!-- Product cards will be loaded by JavaScript -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/255772165345?text=Habari,%20Ninataka%20kupata%20habari%20kuhusu%20simu" class="whatsapp-btn" target="_blank" aria-label="WhatsApp">
+        <span class="whatsapp-icon">💬</span>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Mussa & Munira Phone Shop</h4>
+                    <p>Kununua simu za mtindo na bei nzuri</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Malipo</h4>
+                    <p>💵 Tigo Pesa: 0772165345</p>
+                    <p>💵 Tigo Pesa: 0651723082</p>
+                    <p>🏦 DPO Payment / Selcom</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Wasiliana Nasi</h4>
+                    <p>📞 0772165345</p>
+                    <p>💬 WhatsApp: 0772165345</p>
+                    <p>📧 info@mussaphoneshop.com</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Mtandao wa Kijamii</h4>
+                    <div class="social-links">
+                        <a href="https://facebook.com/MussaWebDeveloper" target="_blank">📘 Facebook</a>
+                        <a href="https://instagram.com/MussaWebDeveloper" target="_blank">📷 Instagram</a>
+                        <a href="https://tiktok.com/@MussaWebDeveloper" target="_blank">🎵 TikTok</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Mussa & Munira Phone Shop. Haki Zimezeziwa © | <a href="#">Sera ya Kurudi</a> | <a href="#">SSL Certificate ✅</a></p>
+                <p>Developed by Mussa Web Developer</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

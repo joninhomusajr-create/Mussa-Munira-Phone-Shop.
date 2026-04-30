@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://www.mussaphoneshop.com/sitemap.xml
+
+# Allow crawler access to important pages
+Allow: /index.html
+Allow: /products.html
+Allow: /about.html
+Allow: /contact.html
+
+# Crawl speed
+Crawl-delay: 1
